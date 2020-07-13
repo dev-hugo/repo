@@ -32,7 +32,7 @@ jobs:
         REMOTE_USER: ${{ secrets.USERNAME }}
         REMOTE_PASSWORD: ${{ secrets.PASSWORD }}
         REMOTE_PORT: ${{ secrets.PORT }}
-        SOURCE: ${{ secrets.SOURCE }}
+        SOURCE: "/"
         REMOTE_PATH: ${{ secrets.TARGET }}
 
     # Runs a single command using the runners shell
