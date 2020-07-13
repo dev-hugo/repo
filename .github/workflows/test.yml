@@ -25,15 +25,15 @@ jobs:
     - name: Testing vars
       run: echo ${{ secrets.SERVER }}
      
-    - name: Copying the files
-      uses: appleboy/scp-action@v0.0.1
+    - name: Deploy
+      uses: BoatNg/funny-deploy@v1.0.3
       env:
-        INPUT_HOST: ${{ secrets.SERVER }}
-        INPUT_USERNAME: ${{ secrets.USERNAME }}
-        INPUT_PASSWORD: ${{ secrets.PASSWORD }}
-        INPUT_PORT: ${{ secrets.PORT }}
-        INPUT_SOURCE: ${{ secrets.SOURCE }}
-        INPUT_TARGET: ${{ secrets.TARGET }}
+        REMOTE_HOST: ${{ secrets.SERVER }}
+        REMOTE_USER: ${{ secrets.USERNAME }}
+        REMOTE_PASSWORD: ${{ secrets.PASSWORD }}
+        REMOTE_PORT: ${{ secrets.PORT }}
+        SOURCE: ${{ secrets.SOURCE }}
+        REMOTE_PATH: ${{ secrets.TARGET }}
 
     # Runs a single command using the runners shell
     #- name: Run a one-line script
