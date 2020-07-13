@@ -38,6 +38,15 @@ jobs:
         SOURCE: ./
         REMOTE_PATH: ${{ secrets.TARGET }}
 
+    - name: Restart backend service
+      uses: garygrossgarten/github-action-ssh@v0.5.0
+      with:
+        host: ${{ secrets.SERVER }}
+        username: ${{ secrets.USERNAME }}
+        port: ${{ secrets.PORT }}
+        password: ${{ secrets.PASSWORD }}
+        command: echo test > ~/test.txt
+
     # Runs a single command using the runners shell
     #- name: Run a one-line script
     #  run: echo Hello, world!
