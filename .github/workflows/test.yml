@@ -25,6 +25,9 @@ jobs:
     - name: Testing vars
       run: echo ${{ secrets.SERVER }}
      
+    - name: Testing dir
+      run: ls /
+     
     - name: Deploy
       uses: BoatNg/funny-deploy@v1.0.3
       env:
