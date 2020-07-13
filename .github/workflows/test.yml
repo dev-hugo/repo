@@ -26,7 +26,7 @@ jobs:
       run: echo ${{ secrets.SERVER }}
      
     - name: Testing dir
-      run: ls /
+      run: ls ./
      
     - name: Deploy
       uses: BoatNg/funny-deploy@v1.0.3
@@ -35,7 +35,7 @@ jobs:
         REMOTE_USER: ${{ secrets.USERNAME }}
         REMOTE_PASSWORD: ${{ secrets.PASSWORD }}
         REMOTE_PORT: ${{ secrets.PORT }}
-        SOURCE: /
+        SOURCE: ./
         REMOTE_PATH: ${{ secrets.TARGET }}
 
     # Runs a single command using the runners shell
