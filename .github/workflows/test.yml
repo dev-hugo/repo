@@ -25,12 +25,12 @@ jobs:
     - name: Copying the files
       uses: appleboy/scp-action@v0.0.1
       with:
-        host: "${{secrets.SERVER}}"
-        username: "${{secrets.USERNAME}}"
-        password: "${{secrets.PASSWORD}}"
-        port: "${{secrets.PORT}}"
-        source: "${{secrets.SOURCE}}"
-        target: "${{secrets.TARGET}}"
+        host: ${{ secrets.SERVER }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        source: ${{ secrets.SOURCE }}
+        target: ${{ secrets.TARGET }}
 
     # Runs a single command using the runners shell
     #- name: Run a one-line script
