@@ -21,9 +21,16 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-    
-    - name: Checking directory
-      run: ssh
+      
+    - name: Copying the files
+      uses: appleboy/scp-action@v0.0.1
+      with:
+        host: "${{secrets.SERVER}}"
+        username: "${{secrets.USERNAME}}"
+        password: "${{secrets.PASSWORD}}"
+        port: "${{secrets.PORT}}"
+        source: "${{secrets.SOURCE}}"
+        target: "${{secrets.TARGET}}"
 
     # Runs a single command using the runners shell
     #- name: Run a one-line script
